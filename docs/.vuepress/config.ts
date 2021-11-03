@@ -113,7 +113,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
         // page meta
         editLinkText: '在 GitHub 上编辑此页',
-        docsRepo:'zeronejs/zerone-docs',
+        docsRepo:'zeronejs/zeronejs.github.io',
         lastUpdatedText: '上次更新',
         contributorsText: '贡献者',
 

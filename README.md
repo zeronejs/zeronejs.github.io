@@ -5,7 +5,7 @@
 1. Clone repository
 
 ```bash
-git clone git@github.com:zeronejs/zerone-docs.git
+git clone git@github.com:zeronejs/zeronejs.github.io.git
 ```
 
 2. Install dependencies
