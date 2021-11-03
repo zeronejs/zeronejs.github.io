@@ -1,5 +1,7 @@
 # zerone.top
 
+Github pages in [gh-pages](https://github.com/zeronejs/zeronejs.github.io/tree/gh-pages)
+
 ## Developing
 
 1. Clone repository
