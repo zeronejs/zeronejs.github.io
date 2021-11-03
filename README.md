@@ -17,5 +17,5 @@ yarn # or npm install
 3. Start local development environment
 
 ```bash
-yarn docs:dev # or npm run docs:dev
+yarn dev # or npm run dev
 ```
