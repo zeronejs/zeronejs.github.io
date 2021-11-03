@@ -1,0 +1,19 @@
+{
+  "name": "zerone-docs",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "commit": "git-cz",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.26"
+  },
+  "dependencies": {
+    "vite": "^2.6.11"
+  }
+}
