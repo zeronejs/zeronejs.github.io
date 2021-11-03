@@ -75,7 +75,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
     repo: 'zeronejs/zerone',
 
-    docsBranch: 'master',
+    docsBranch: 'main',
     docsDir: 'docs',
     editLinkPattern: ':repo/blob/:branch/:path',
 
@@ -93,9 +93,9 @@ export default defineUserConfig<DefaultThemeOptions>({
 
         // sidebar
         sidebar: sidebar.en,
-
         // page meta
         editLinkText: 'Edit this page on GitHub',
+        docsRepo:'zeronejs/zeronejs.github.io',
       },
 
       /**
