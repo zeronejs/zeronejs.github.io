@@ -177,7 +177,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       "@vuepress/plugin-google-analytics",
       {
         // we have multiple deployments, which would use different id
-        id: "G-29RHYWDRKP",
+        id: "UA-211860502-1",
       },
     ],
     //   [
