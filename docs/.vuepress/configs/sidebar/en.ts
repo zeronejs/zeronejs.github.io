@@ -47,7 +47,7 @@ export const en: SidebarConfig = {
   ],
   '/techniques/': [
     {
-      text: 'Zerone Techniques',
+      text: 'Zerone Plugins',
       children: [
         '/techniques/role.md',
         '/techniques/auth.md',

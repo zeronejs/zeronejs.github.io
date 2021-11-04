@@ -45,7 +45,7 @@ export const zh: SidebarConfig = {
   ],
   '/zh/techniques/': [
     {
-      text: 'Zerone 技巧',
+      text: 'Zerone 插件',
       children: [
         '/zh/techniques/role.md',
         '/zh/techniques/auth.md',

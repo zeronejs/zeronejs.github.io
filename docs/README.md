@@ -9,19 +9,19 @@ actions:
   - text: Introduction
     link: /guide/
     type: secondary
-# features:
-  # - title: Simplicity First
-  #   details: Minimal setup with markdown-centered project structure helps you focus on writing.
-  # - title: Vue-Powered
-  #   details: Enjoy the dev experience of Vue, use Vue components in markdown, and develop custom themes with Vue.
-  # - title: Performant
-  #   details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-  # - title: Themes
-  #   details: Providing a default theme out of the box. You can also choose a community theme or create your own one.
-  # - title: Plugins
-  #   details: Flexible plugin API, allowing plugins to provide lots of plug-and-play features for your site. 
-  # - title: Bundlers
-  #   details: Both Webpack and Vite are supported. Choose the one you like!
+features:
+  - title: The front-end
+    details: Help front-end developers to develop Node modules quickly.
+  - title: The back-end
+    details: Help node development engineer improve work efficiency.
+  - title: Performant
+    details: Create projects or generate CURD in the blink of an eye.
+  - title: Simplicity First
+    details: Help you build powerful applications with minimal effort.
+  - title: Plugins
+    details: Flexible plugin API that allow plugins to provide many plug-and-play modules for your services.
+  - title: Convenient
+    details: It takes a cup of tea to finish the job.
 footer: MIT Licensed | Copyright © 2021-present zeronejs
 ---
 

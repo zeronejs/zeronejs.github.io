@@ -7,10 +7,10 @@ export const zh: NavbarConfig = [
     link: "/zh/guide/",
   },
   {
-    text: "技巧",
+    text: "插件",
     children: [
       {
-        text: "技巧",
+        text: "插件",
         children: [
           "/zh/techniques/role.md",
           "/zh/techniques/auth.md",

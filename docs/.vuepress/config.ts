@@ -65,13 +65,13 @@ export default defineUserConfig<DefaultThemeOptions>({
       lang: "en-US",
       title: "Zerone",
       description:
-        "zerone = zero => one, From 0 to 1, it helps front-end developers to develop Node modules quickly",
+        "zerone = zero => one, build the Node project from 0 to 1",
     },
     "/zh/": {
       lang: "zh-CN",
       title: "Zerone",
       description:
-        "zerone = zero => one ，从0到1，帮助前端开发人员快速上手开发node模块 ",
+        `zerone = zero => one ，从0到1构建node项目`,
     },
   },
 

@@ -7,10 +7,10 @@ export const en: NavbarConfig = [
     link: "/guide/",
   },
   {
-    text: "Techniques",
+    text: "Plugins",
     children: [
       {
-        text: "Techniques",
+        text: "Plugins",
         children: [
           "/techniques/role.md",
           "/techniques/auth.md",
