@@ -1,7 +1,7 @@
 ---
 home: true
 title: 首页
-heroImage: /images/hero.png
+heroImage: /images/logo/logo.gif
 actions:
   - text: 快速上手
     link: /zh/guide/getting-started.html

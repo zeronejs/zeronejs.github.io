@@ -15,7 +15,8 @@ export default defineUserConfig<DefaultThemeOptions>({
         rel: "icon",
         type: "image/png",
         sizes: "16x16",
-        href: `/images/icons/favicon-16x16.png`,
+        // href: `/images/icons/favicon-16x16.png`,
+        href: `/images/logo/logo.png`,
       },
     ],
     [
@@ -24,7 +25,8 @@ export default defineUserConfig<DefaultThemeOptions>({
         rel: "icon",
         type: "image/png",
         sizes: "32x32",
-        href: `/images/icons/favicon-32x32.png`,
+        // href: `/images/icons/favicon-32x32.png`,
+        href: `/images/logo/logo.png`,
       },
     ],
     ["link", { rel: "manifest", href: "/manifest.webmanifest" }],
@@ -35,8 +37,8 @@ export default defineUserConfig<DefaultThemeOptions>({
         content: "Nd6zd85AWcaljHfEm5tdOyOmekiVz-MLQvB29STmvV0",
       },
     ],
-    ["meta", { name: "application-name", content: "VuePress" }],
-    ["meta", { name: "apple-mobile-web-app-title", content: "VuePress" }],
+    ["meta", { name: "application-name", content: "Zerone" }],
+    ["meta", { name: "apple-mobile-web-app-title", content: "Zerone" }],
     [
       "meta",
       { name: "apple-mobile-web-app-status-bar-style", content: "black" },
@@ -80,7 +82,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   //   (isProd ? '@vuepress/webpack' : '@vuepress/vite'),
 
   themeConfig: {
-    logo: "/images/hero.png",
+    logo: "/images/logo/logo.png",
 
     repo: "zeronejs/zerone",
 
