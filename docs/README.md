@@ -1,7 +1,7 @@
 ---
 home: true
 title: Home
-heroImage: /images/logo/logo.gif
+heroImage: /images/logo/logo3.gif
 actions:
   - text: Get Started
     link: /guide/getting-started.html
