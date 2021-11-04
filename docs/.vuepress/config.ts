@@ -28,7 +28,13 @@ export default defineUserConfig<DefaultThemeOptions>({
       },
     ],
     ["link", { rel: "manifest", href: "/manifest.webmanifest" }],
-    ["meta", { name: "google-site-verification", content: "Nd6zd85AWcaljHfEm5tdOyOmekiVz-MLQvB29STmvV0" }],
+    [
+      "meta",
+      {
+        name: "google-site-verification",
+        content: "Nd6zd85AWcaljHfEm5tdOyOmekiVz-MLQvB29STmvV0",
+      },
+    ],
     ["meta", { name: "application-name", content: "VuePress" }],
     ["meta", { name: "apple-mobile-web-app-title", content: "VuePress" }],
     [
@@ -174,6 +180,19 @@ export default defineUserConfig<DefaultThemeOptions>({
     //       },
     //     },
     //   ],
+    [
+      "@vuepress/plugin-search",
+      {
+        locales: {
+          "/": {
+            placeholder: "Search",
+          },
+          "/zh/": {
+            placeholder: "搜索",
+          },
+        },
+      },
+    ],
     [
       "@vuepress/plugin-google-analytics",
       {
