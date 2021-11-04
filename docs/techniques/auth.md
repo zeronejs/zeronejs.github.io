@@ -10,7 +10,9 @@ yarn add @zeronejs/auth
 ```
 
 - **Step 2**: Import the AuthModule into the root module
-
+::: tip
+Or import into the module where you depend on `AuthService`
+:::
 ```ts
 import { AuthModule } from '@zeronejs/auth';
 @Module({
@@ -38,10 +40,10 @@ import { UseGuards } from '@nestjs/common';
 import { SkipJwtAuth, AuthService, LocalAuthGuard, Request } from '@zeronejs/auth';
 import { encryptedUserPassword } from '@zeronejs/utils';
 
-class UserController {
+class AppController {
     constructor(
         private readonly userService: UserService,
-        private authService: AuthService
+        private readonly authService: AuthService
     ) {}
     
     @SkipJwtAuth()
@@ -61,3 +63,7 @@ class UserController {
         return this.authService.login(req.user);
     }
 ```
+
+::: tip
+To invoke the `login` interface(Or when you use `LocalAuthGuard`), you need to provide the `username` and `passwrod` fields.
+:::

@@ -9,6 +9,9 @@ yarn add @zeronejs/auth
 ```
 
 - **步骤2**: 将AuthModule导入根模块
+::: tip
+或者导入到您依赖`AuthService`的那个模块
+:::
 
 ```ts
 import { AuthModule } from '@zeronejs/auth';
@@ -37,10 +40,10 @@ import { UseGuards } from '@nestjs/common';
 import { SkipJwtAuth, AuthService, LocalAuthGuard, Request } from '@zeronejs/auth';
 import { encryptedUserPassword } from '@zeronejs/utils';
 
-class UserController {
+class AppController {
     constructor(
         private readonly userService: UserService,
-        private authService: AuthService
+        private readonly authService: AuthService
     ) {}
     
     @SkipJwtAuth()
@@ -60,3 +63,7 @@ class UserController {
         return this.authService.login(req.user);
     }
 ```
+
+::: tip
+调用`login`接口时（或者说是当您使用`LocalAuthGuard`），您需要提供`username`和`passwrod`字段
+:::
