@@ -4,59 +4,61 @@ sidebar: auto
 # Contributing Guide
 ## Overview
 
-在 `packages` 目录下存放了多个互相关联的独立 Package 。
+The `packages` directory houses multiple individual packages that are related to each other.
 
-- `@zeronejs/cli`: 命令行接口 (CLI) 模块。包含创建 Zerone 项目，一键生成 CURD ，build 等功能。
+- `@zeronejs/cli`: Command line interface (CLI) module. Includes Zerone project creation, one-click generation of CURD, build and other functions.
 
-- `@zeronejs/role-easy`: 简单的角色授权模块。
+- `@zeronejs/role-easy`: Simple role authorization module.
 
-- `@zeronejs/auth`: 身份认证模块。
+- `@zeronejs/auth`: Identity authentication module.
 
-- `@zeronejs/redis`: redis模块。
+- `@zeronejs/redis`: Redis module.
 
-- `@zeronejs/utils`: 仅可以在 Node 端使用的工具函数模块。
+- `@zeronejs/utils`: Utility function modules that can only be used on the Node side.
 
-## 开发配置
+## Development Setup
 
-开发要求：
+Pre-requirement：
 
 - [Node.js](http://nodejs.org) **version 12+**
 - [Yarn v1 classic](https://classic.yarnpkg.com/en/docs/install)
 
-克隆代码仓库，并安装依赖：
+Clone the repo, and install dependencies：
 
 ```bash
 yarn
 ```
 
-本项目开发使用的一些主要工具：
+Main tools that used in this project：
 
-- [TypeScript](https://www.typescriptlang.org/) 作为开发语言
-- [Jest](https://jestjs.io/) 用于单元测试
-- [ESLint](https://eslint.org/) 用于代码检查
+- [TypeScript](https://www.typescriptlang.org/) as the development language
+- [Jest](https://jestjs.io/) for unit testing
+- [ESLint](https://eslint.org/) for code linting
 
-## 开发脚本
+## Scripts
 
 ### `yarn test`
 
-`test` 命令使用 Jest 来运行单元测试。
+The `test` script uses Jest to run unit testings
 
 ### `yarn commit`
 
-`commit` 命令使用 [git-cz](https://github.com/streamich/git-cz) ,在您进行代码提交时的`消息`。
+The `commit` command uses the `message` from [git-cz](https://github.com/streamich/git-cz) when you commit code.
 
 ### `yarn build`
 
-`build` 命令使用 [zerone cli](https://zerone.top/zh/guide/cli.html) build命令 。
+The `build` command uses [zerone cli](https://zerone.top/guide/cli.html) the build command.
 
-## 文档
+## Documentation
 
-源码在[这里](https://github.com/zeronejs/zeronejs.github.io)
+Source code is [here](https://github.com/zeronejs/zeronejs.github.io)
 
-所有的 Markdown 源文件都放置在 `docs` 目录下。我们维护了两种翻译：
+All the markdown source files are placed in `docs` directory. We are maintaining two translations:
 
-- 英语 (en-US) 在 `/` 路径下
-- 中文 (zh-CN) 在 `/zh/` 路径下
+- English (en-US) in `/` path
+- Chinese (zh-CN) in `/zh/` path
 
 
-我们在 [GitHub Pages](https://pages.github.com) 部署的 生产 版本。该站点是从最新的提交中[自动构建](https://github.com/features/actions)而来。域名为 [https://zerone.top](https://zerone.top)。
+The production version we deployed on [GitHub Pages](https://pages.github.com).
+
+The site is [automatically built](https://github.com/features/actions) from the latest submission. The domain name is [https://zerone.top](https://zerone.top).
