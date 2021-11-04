@@ -1,20 +1,20 @@
-import type { NavbarConfig } from '@vuepress/theme-default'
-import { version } from '../meta'
+import type { NavbarConfig } from "@vuepress/theme-default";
+import { version } from "../meta";
 
 export const zh: NavbarConfig = [
   {
-    text: '指南',
-    link: '/zh/guide/',
+    text: "指南",
+    link: "/zh/guide/",
   },
   {
-    text: '技巧',
+    text: "技巧",
     children: [
       {
-        text: '技巧',
+        text: "技巧",
         children: [
-          '/zh/techniques/role.md',
-          '/zh/techniques/auth.md',
-          '/zh/techniques/redis.md',
+          "/zh/techniques/role.md",
+          "/zh/techniques/auth.md",
+          "/zh/techniques/redis.md",
           // '/zh/techniques/crud.md',
           // '/zh/reference/frontmatter.md',
           // '/zh/reference/components.md',
@@ -92,7 +92,7 @@ export const zh: NavbarConfig = [
   //   ],
   // },
   {
-    text: '了解更多',
+    text: "了解更多",
     children: [
       // {
       //   text: '深入',
@@ -106,16 +106,16 @@ export const zh: NavbarConfig = [
       //     },
       //   ],
       // },
-      // {
-      //   text: '其他资源',
-      //   children: [
-      //     '/zh/contributing.md',
-      //     {
-      //       text: 'Awesome VuePress',
-      //       link: 'https://github.com/vuepress/awesome-vuepress',
-      //     },
-      //   ],
-      // },
+      {
+        text: "其他资源",
+        children: [
+          "/zh/contributing.md",
+          // {
+          //   text: "Awesome VuePress",
+          //   link: "https://github.com/vuepress/awesome-vuepress",
+          // },
+        ],
+      },
     ],
   },
   // {
@@ -136,4 +136,4 @@ export const zh: NavbarConfig = [
   //     },
   //   ],
   // },
-]
+];

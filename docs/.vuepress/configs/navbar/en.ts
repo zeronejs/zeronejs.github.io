@@ -1,20 +1,20 @@
-import type { NavbarConfig } from '@vuepress/theme-default'
-import { version } from '../meta'
+import type { NavbarConfig } from "@vuepress/theme-default";
+import { version } from "../meta";
 
 export const en: NavbarConfig = [
   {
-    text: 'Guide',
-    link: '/guide/',
+    text: "Guide",
+    link: "/guide/",
   },
   {
-    text: 'Techniques',
+    text: "Techniques",
     children: [
       {
-        text: 'Techniques',
+        text: "Techniques",
         children: [
-          '/techniques/role.md',
-          '/techniques/auth.md',
-          '/techniques/redis.md',
+          "/techniques/role.md",
+          "/techniques/auth.md",
+          "/techniques/redis.md",
           // {
           //   text: 'CLI',
           //   link: '/reference/cli.html',
@@ -96,7 +96,7 @@ export const en: NavbarConfig = [
   //   ],
   // },
   {
-    text: 'Learn More',
+    text: "Learn More",
     children: [
       // {
       //   text: 'Advanced',
@@ -110,34 +110,34 @@ export const en: NavbarConfig = [
       //     },
       //   ],
       // },
-      // {
-      //   text: 'Resources',
-      //   children: [
-      //     '/contributing.md',
-      //     {
-      //       text: 'Awesome VuePress',
-      //       link: 'https://github.com/vuepress/awesome-vuepress',
-      //     },
-      //   ],
-      // },
+      {
+        text: "Resources",
+        children: [
+          "/contributing.md",
+          // {
+          //   text: 'Awesome VuePress',
+          //   link: 'https://github.com/vuepress/awesome-vuepress',
+          // },
+        ],
+      },
     ],
   },
   // {
-    // text: `v${version}`,
-    // children: [
-    //   {
-    //     text: 'Changelog',
-    //     link:
-    //       'https://github.com/vuepress/vuepress-next/blob/main/CHANGELOG.md',
-    //   },
-    //   {
-    //     text: 'v1.x',
-    //     link: 'https://v1.vuepress.vuejs.org',
-    //   },
-    //   {
-    //     text: 'v0.x',
-    //     link: 'https://v0.vuepress.vuejs.org',
-    //   },
-    // ],
+  // text: `v${version}`,
+  // children: [
+  //   {
+  //     text: 'Changelog',
+  //     link:
+  //       'https://github.com/vuepress/vuepress-next/blob/main/CHANGELOG.md',
+  //   },
+  //   {
+  //     text: 'v1.x',
+  //     link: 'https://v1.vuepress.vuejs.org',
+  //   },
+  //   {
+  //     text: 'v0.x',
+  //     link: 'https://v0.vuepress.vuejs.org',
+  //   },
+  // ],
   // },
-]
+];
