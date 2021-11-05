@@ -2,6 +2,8 @@
 
 Authentication is an essential part of most applications. There are many different approaches and strategies to handle authentication. The approach taken for any project depends on its particular application requirements. This chapter presents several approaches to authentication that can be adapted to a variety of different requirements.
 
+[JWT introduction](https://jwt.io/introduction/)
+
 ## Authentication requirements
 
 - **Step 1**: Install an Auth authentication package provided by `Zerone`, including JWT Strategy and Local Strategy
