@@ -9,6 +9,7 @@ export const zh: SidebarConfig = {
         '/zh/guide/getting-started.md',
         '/zh/guide/dir-structure.md',
         '/zh/guide/cli.md',
+        '/zh/guide/ast.md',
         // '/zh/guide/configuration.md',
         // '/zh/guide/page.md',
         // '/zh/guide/markdown.md',
