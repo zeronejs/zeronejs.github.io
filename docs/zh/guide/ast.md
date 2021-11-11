@@ -1,6 +1,6 @@
 # Typescript AST（抽象语法树）
 
-TypeScript AST 的 读取 是一个挑战，这个库封装了 TypeScript compiler API，并且它很简单。
+`TypeScript AST` 的读取是一个挑战，这个库封装了 TypeScript compiler API，并且它很简单。
 
 ## 手动安装
 
@@ -53,7 +53,7 @@ console.log(imports)
 ```
 
 ### Classes 
-在您的源文件中添加一个类
+在您的源文件中声明一个类
 ```ts
 /**
  * 用户表
@@ -64,7 +64,7 @@ export class UserEntity {
 	 * id
 	 */
 	@PrimaryGeneratedColumn()
-	id?: number;
+	id: number;
 	/**
 	 * 用户名
 	 */
@@ -75,7 +75,7 @@ export class UserEntity {
 	 * 备注
 	 */
 	@Column({ default: 'desc' })
-	desc: string;
+	desc?: string;
 }
 
 ```
@@ -123,8 +123,58 @@ console.log(imports)
 
 ### enums
 
+获取所有枚举
+
+```ts
+import { EnumsInterpret, InterpretCore } from '@zeronejs/ast';
+import { join } from 'path';
+
+const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
+const enums = new EnumsInterpret(interpretCore).interpret();
+
+console.log(enums)
+
+```
+
 ### variables
 
+获取所有变量
+
+```ts
+import { VariableStatement, InterpretCore } from '@zeronejs/ast';
+import { join } from 'path';
+
+const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
+const vars = new VariableStatement(interpretCore).interpret();
+
+console.log(vars)
+
+```
 ### typeAlias
 
+获取所有类型别名
+
+```ts
+import { TypeAliasDeclaration, InterpretCore } from '@zeronejs/ast';
+import { join } from 'path';
+
+const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
+const typeAlias = new TypeAliasDeclaration(interpretCore).interpret();
+
+console.log(typeAlias)
+
+```
 ### interfaces
+
+获取所有接口
+
+```ts
+import { InterfaceDeclaration, InterpretCore } from '@zeronejs/ast'; 
+import { join } from 'path';
+
+const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
+const interfaces = new InterfaceDeclaration(interpretCore).interpret();
+
+console.log(interfaces)
+
+```
