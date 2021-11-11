@@ -54,7 +54,7 @@ And when junior developers do this, they often get stuck due to low-level mistak
 <!-- ::: tip
 您仅需写一个表结构，执行一行命令，即可生成 CRUD
 ::: -->
-`generate`reads all *.entity.ts files in the current command line directory and generates cruDS associated with them, all you need to do is write a table structure.
+`generate`reads all *.entity.ts files in the current command line directory and generates CRUD associated with them, all you need to do is write a [table structure](https://typeorm.io/#/entities).
 ::: tip
 The generated Module class needs to be imported into the root Module.
 :::

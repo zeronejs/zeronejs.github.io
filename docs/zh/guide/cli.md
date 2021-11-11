@@ -54,7 +54,7 @@ Options:
 <!-- ::: tip
 您仅需写一个表结构，执行一行命令，即可生成 CRUD
 ::: -->
-`generate`会读取当前命令行目录下所有*.entity.ts文件，并生成与之相关的 CRUD，您仅需写一个表结构。
+`generate`会读取当前命令行目录下所有*.entity.ts文件，并生成与之相关的 CRUD，您仅需写一个[表结构](https://typeorm.io/#/entities)。
 ::: tip
 生成的 Module类 需要导入到根模块。
 :::

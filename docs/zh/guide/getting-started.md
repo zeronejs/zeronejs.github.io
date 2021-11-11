@@ -55,7 +55,7 @@ npm run start
 项目创建之后，会携带一个用户表，这一章节将帮助您一键生成接口
 
 ::: tip
-generate 命令会读取当前目录下的所有 *.entity.ts文件
+generate 命令会读取当前目录下所有 *.entity.ts文件 的[表结构](https://typeorm.io/#/entities)
 
 需要您进入此文件夹
 ```bash
@@ -77,12 +77,16 @@ import { UserModule } from '@api/user/user.module';
     ]
 })
 export class AppModule {}
-```
-::: warning
-当您使用自定义类型时（比如此例子中的 Gender）， `generate`仅知道此类型的名称，不知道它被定义的位置，请在`dto`文件夹中自行引入
+ ```
+ <!-- ::: warning
+ 当您使用自定义类型时（比如此例子中的 Gender）， `generate`仅知道此类型的名称，不知道它被定义的位置，请在`dto`文件夹中自行引入
 
-`user-create.dto.ts` `user-list.dto.ts` `user-update.dto.ts`
-```ts
-import { Gender } from '../entities/user.entity';
-```
+ `user-create.dto.ts` `user-list.dto.ts` `user-update.dto.ts`
+ ```ts
+ import { Gender } from '../entities/user.entity';
+ ```
+ :::  -->
+
+::: tip
+本项目构建于typeorm, 如有表关联等个性化需求，请参考[typeorm](https://typeorm.io/#/relations)
 :::

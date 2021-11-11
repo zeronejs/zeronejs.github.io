@@ -55,7 +55,7 @@ You should now have a simple working Zerone server.
 After the project is created, it carries a user entity, and this section will help you generate the interface with one click.
 
 ::: tip
-The generate command reads all *.entity.ts files in the current directory
+The generate command reads [the table structure](https://typeorm.io/#/entities) of all *.entity.ts files in the current directory
 
 You need to enter this folder
 ```bash
@@ -78,11 +78,15 @@ import { UserModule } from '@api/user/user.module';
 })
 export class AppModule {}
 ```
-::: warning
+<!-- ::: warning
 When you use a custom type(like Gender in this example), `generate` only knows the name of the type, not the location where it was defined, so bring it in in the `dto` folder
 
 `user-create.dto.ts` `user-list.dto.ts` `user-update.dto.ts`
 ```ts
 import { Gender } from '../entities/user.entity';
 ```
+::: -->
+
+::: tip
+This project is built on `TypeOrm`. For personalized requirements such as table association, please refer to [typeorm](https://typeorm.io/#/relations)
 :::
