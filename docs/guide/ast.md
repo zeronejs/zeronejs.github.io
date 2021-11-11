@@ -8,13 +8,13 @@ Reading the `TypeScript AST` is a challenge. The library encapsulates the TypeSc
   <CodeGroupItem title="YARN" active>
 
 ```bash
-yarn add @zeronejs/ast
+yarn add @zeronejs/ast-ts
 ```
   </CodeGroupItem>
   <CodeGroupItem title="NPM">
 
 ```bash
-npm install @zeronejs/ast
+npm install @zeronejs/ast-ts
 ```
 
   </CodeGroupItem>
@@ -32,13 +32,13 @@ import { readFileSync } from 'fs';
 import path, { join } from 'path';
 
 ```
-Create a file `interpret.ts` and import `@zeronejs/ast`
+Create a file `interpret.ts` and import `@zeronejs/ast-ts`
 ::: tip
 `InterpretCore` is a core dependency for the interpreter
 :::
 
 ```ts
-import { ImportsInterpret, InterpretCore } from '@zeronejs/ast';
+import { ImportsInterpret, InterpretCore } from '@zeronejs/ast-ts';
 import { join } from 'path';
 
 const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
@@ -82,7 +82,7 @@ export class UserEntity {
 use
 
 ```ts
-import { ClassesInterpret, InterpretCore } from '@zeronejs/ast';
+import { ClassesInterpret, InterpretCore } from '@zeronejs/ast-ts';
 import { join } from 'path';
 
 const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
@@ -126,7 +126,7 @@ console.log(imports)
 Get all `enums`
 
 ```ts
-import { EnumsInterpret, InterpretCore } from '@zeronejs/ast';
+import { EnumsInterpret, InterpretCore } from '@zeronejs/ast-ts';
 import { join } from 'path';
 
 const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
@@ -141,7 +141,7 @@ console.log(enums)
 Get all `variables`
 
 ```ts
-import { VariableStatement, InterpretCore } from '@zeronejs/ast';
+import { VariableStatement, InterpretCore } from '@zeronejs/ast-ts';
 import { join } from 'path';
 
 const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
@@ -155,7 +155,7 @@ console.log(vars)
 Get all `typeAlias`
 
 ```ts
-import { TypeAliasDeclaration, InterpretCore } from '@zeronejs/ast';
+import { TypeAliasDeclaration, InterpretCore } from '@zeronejs/ast-ts';
 import { join } from 'path';
 
 const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
@@ -169,7 +169,7 @@ console.log(typeAlias)
 Get all `interfaces`
 
 ```ts
-import { InterfaceDeclaration, InterpretCore } from '@zeronejs/ast'; 
+import { InterfaceDeclaration, InterpretCore } from '@zeronejs/ast-ts'; 
 import { join } from 'path';
 
 const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));

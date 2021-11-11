@@ -8,13 +8,13 @@
   <CodeGroupItem title="YARN" active>
 
 ```bash
-yarn add @zeronejs/ast
+yarn add @zeronejs/ast-ts
 ```
   </CodeGroupItem>
   <CodeGroupItem title="NPM">
 
 ```bash
-npm install @zeronejs/ast
+npm install @zeronejs/ast-ts
 ```
 
   </CodeGroupItem>
@@ -32,13 +32,13 @@ import { readFileSync } from 'fs';
 import path, { join } from 'path';
 
 ```
-创建一个文件 `interpret.ts`, 并引入`@zeronejs/ast`
+创建一个文件 `interpret.ts`, 并引入`@zeronejs/ast-ts`
 ::: tip
 `InterpretCore`是解释器的核心依赖
 :::
 
 ```ts
-import { ImportsInterpret, InterpretCore } from '@zeronejs/ast';
+import { ImportsInterpret, InterpretCore } from '@zeronejs/ast-ts';
 import { join } from 'path';
 
 const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
@@ -82,7 +82,7 @@ export class UserEntity {
 use
 
 ```ts
-import { ClassesInterpret, InterpretCore } from '@zeronejs/ast';
+import { ClassesInterpret, InterpretCore } from '@zeronejs/ast-ts';
 import { join } from 'path';
 
 const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
@@ -126,7 +126,7 @@ console.log(imports)
 获取所有枚举
 
 ```ts
-import { EnumsInterpret, InterpretCore } from '@zeronejs/ast';
+import { EnumsInterpret, InterpretCore } from '@zeronejs/ast-ts';
 import { join } from 'path';
 
 const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
@@ -141,7 +141,7 @@ console.log(enums)
 获取所有变量
 
 ```ts
-import { VariableStatement, InterpretCore } from '@zeronejs/ast';
+import { VariableStatement, InterpretCore } from '@zeronejs/ast-ts';
 import { join } from 'path';
 
 const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
@@ -155,7 +155,7 @@ console.log(vars)
 获取所有类型别名
 
 ```ts
-import { TypeAliasDeclaration, InterpretCore } from '@zeronejs/ast';
+import { TypeAliasDeclaration, InterpretCore } from '@zeronejs/ast-ts';
 import { join } from 'path';
 
 const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
@@ -169,7 +169,7 @@ console.log(typeAlias)
 获取所有接口
 
 ```ts
-import { InterfaceDeclaration, InterpretCore } from '@zeronejs/ast'; 
+import { InterfaceDeclaration, InterpretCore } from '@zeronejs/ast-ts'; 
 import { join } from 'path';
 
 const interpretCore = new InterpretCore(join(__dirname, 'source.ts'));
