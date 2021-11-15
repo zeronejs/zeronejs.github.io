@@ -39,8 +39,7 @@ export class AppModule {}
 通常情况下，您可以使用此模块实现 登录 注册
 ```ts
 import { UseGuards } from '@nestjs/common';
-import { SkipJwtAuth, AuthService, LocalAuthGuard, Request } from '@zeronejs/auth';
-import { encryptedUserPassword } from '@zeronejs/utils';
+import { SkipJwtAuth, AuthService, LocalAuthGuard, Request, encryptedUserPassword } from '@zeronejs/auth';
 
 class AppController {
     constructor(

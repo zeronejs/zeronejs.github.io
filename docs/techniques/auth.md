@@ -39,8 +39,7 @@ The JWT Strategy is enabled globally by default. If the interface needs to skip 
 Typically, you can use this module to implement login registration
 ```ts
 import { UseGuards } from '@nestjs/common';
-import { SkipJwtAuth, AuthService, LocalAuthGuard, Request } from '@zeronejs/auth';
-import { encryptedUserPassword } from '@zeronejs/utils';
+import { SkipJwtAuth, AuthService, LocalAuthGuard, Request, encryptedUserPassword } from '@zeronejs/auth';
 
 class AppController {
     constructor(
