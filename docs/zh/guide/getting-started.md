@@ -2,7 +2,7 @@
 
 ## 依赖环境
 
-- [Node.js v12+](https://nodejs.org/)
+- [Node.js v12+](https://nodejs.org/zh-cn/)
 <!-- - [Yarn v1 classic](https://classic.yarnpkg.com/zh-Hans/) （可选） -->
 
 <!-- ::: tip
@@ -62,31 +62,30 @@ generate 命令会读取当前目录下所有 *.entity.ts文件 的[表结构](h
 cd src/api/user/entities/
 ```
 :::
-
+仅需一行命令，一套CRUD就生成了。
 ```bash
 zerone generate
 ```
+重启项目
+ <CodeGroup>
+  <CodeGroupItem title="YARN" active>
 
-紧接着 把 UserModule 导入根模块， 一套简单的CRUD就生成了。
-```ts
-import { UserModule } from '@api/user/user.module';
-@Module({
-    imports: [
-        UserModule,
-        // ... 其他模块
-    ]
-})
-export class AppModule {}
- ```
- <!-- ::: warning
- 当您使用自定义类型时（比如此例子中的 Gender）， `generate`仅知道此类型的名称，不知道它被定义的位置，请在`dto`文件夹中自行引入
+```bash
+yarn start
+```
 
- `user-create.dto.ts` `user-list.dto.ts` `user-update.dto.ts`
- ```ts
- import { Gender } from '../entities/user.entity';
- ```
- :::  -->
+  </CodeGroupItem>
 
+  <CodeGroupItem title="NPM">
+
+```bash
+npm run start
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+ 
+[http://localhost:5000/api](http://localhost:5000/api) 查看生成的接口
 ::: tip
 本项目构建于typeorm, 如有表关联等个性化需求，请参考[typeorm](https://typeorm.io/#/relations)
 :::

@@ -62,30 +62,30 @@ You need to enter this folder
 cd src/api/user/entities/
 ```
 :::
-
+With a single command, a CRUD is generated。
 ```bash
 zerone generate
 ```
+Restart the project
+ <CodeGroup>
+  <CodeGroupItem title="YARN" active>
 
-Then import the UserModule into the app module, and a simple CRUD is generated.
-```ts
-import { UserModule } from '@api/user/user.module';
-@Module({
-    imports: [
-        UserModule,
-        // ... Other modules
-    ]
-})
-export class AppModule {}
+```bash
+yarn start
 ```
-<!-- ::: warning
-When you use a custom type(like Gender in this example), `generate` only knows the name of the type, not the location where it was defined, so bring it in in the `dto` folder
 
-`user-create.dto.ts` `user-list.dto.ts` `user-update.dto.ts`
-```ts
-import { Gender } from '../entities/user.entity';
+  </CodeGroupItem>
+
+  <CodeGroupItem title="NPM">
+
+```bash
+npm run start
 ```
-::: -->
+
+  </CodeGroupItem>
+</CodeGroup>
+ 
+View the generated interface on [http://localhost:5000/api](http://localhost:5000/api)
 
 ::: tip
 This project is built on `TypeOrm`. For personalized requirements such as table association, please refer to [typeorm](https://typeorm.io/#/relations)
