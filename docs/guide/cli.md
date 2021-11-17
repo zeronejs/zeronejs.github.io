@@ -65,7 +65,8 @@ Usage: zerone generate|g [options]
 Generate a Zerone CRUD element
 
 Options:
-  -h, --help  Output usage information.
+  -d, --delete  Delete files generated before this module.
+  -h, --help    Output usage information.
 ```
 
 ## build
