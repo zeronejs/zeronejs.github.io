@@ -45,7 +45,7 @@ npm run start
 </CodeGroup>
 
 
-  Zerone launches a development server at[http://localhost:5000](http://localhost:5000). [http://localhost:5000/api](http://localhost:5000/api) started a Swagger open API.
+  Zerone launches a development server at[http://localhost:5000](http://localhost:5000). [http://localhost:5000/docs](http://localhost:5000/docs) started a Swagger open API.
 
 You should now have a simple working Zerone server.
 <!-- 接下来，了解一下 Zerone [目录](./dir-structure.md) 相关的内容。 -->
@@ -85,7 +85,7 @@ npm run start
   </CodeGroupItem>
 </CodeGroup>
  
-View the generated interface on [http://localhost:5000/api](http://localhost:5000/api)
+View the generated interface on [http://localhost:5000/docs](http://localhost:5000/docs)
 
 ::: tip
 This project is built on `TypeOrm`. For personalized requirements such as table association, please refer to [typeorm](https://typeorm.io/#/relations)

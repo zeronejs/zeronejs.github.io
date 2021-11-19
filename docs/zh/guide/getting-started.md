@@ -45,7 +45,7 @@ npm run start
 </CodeGroup>
 
 
-  Zerone 会在 [http://localhost:5000](http://localhost:5000) 启动一个开发服务器。[http://localhost:5000/api](http://localhost:5000/api) 启动一个 Swagger 开放api。
+  Zerone 会在 [http://localhost:5000](http://localhost:5000) 启动一个开发服务器。[http://localhost:5000/docs](http://localhost:5000/docs) 启动一个 Swagger 开放api。
 
 现在，你应该已经有了一个简单可用的 Zerone 服务器。
 <!-- 接下来，了解一下 Zerone [目录](./dir-structure.md) 相关的内容。 -->
@@ -85,7 +85,7 @@ npm run start
   </CodeGroupItem>
 </CodeGroup>
  
-[http://localhost:5000/api](http://localhost:5000/api) 查看生成的接口
+[http://localhost:5000/docs](http://localhost:5000/docs) 查看生成的接口
 ::: tip
 本项目构建于typeorm, 如有表关联等个性化需求，请参考[typeorm](https://typeorm.io/#/relations)
 :::

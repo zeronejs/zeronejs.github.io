@@ -25,4 +25,4 @@ zerone = zero => one ，从0到1，帮助前端开发人员快速上手开发后
 
 ## 开放api
 
-[http://localhost:5000/api](http://localhost:5000/api) 
+[http://localhost:5000/docs](http://localhost:5000/docs) 
