@@ -5,34 +5,41 @@
 [JWT 介绍](https://jwt.io/introduction/)
 
 
-- **步骤1**: 安装Zerone 提供的一个auth 身份验证包，其中包括jwt策略和local策略
+## 安装
+安装Zerone 提供的一个auth 身份验证包，其中包括jwt策略和local策略。
 ```bash
 yarn add @zeronejs/auth
 ```
 
-- **步骤2**: 将AuthModule导入根模块
+## 启用
+将AuthModule导入根模块。
 ::: tip
-或者导入到您依赖`AuthService`的那个模块
+在`AuthModule.forRoot`传入一个配置对象。[在这里](https://github.com/auth0/node-jsonwebtoken#usage)查看可用配置选项的详细信息。 
 :::
 
 ```ts
 import { AuthModule } from '@zeronejs/auth';
 @Module({
     imports: [
-        AuthModule,
+        AuthModule.forRoot({
+            secret: 'secretKey', // 秘钥
+            signOptions: { expiresIn: '6h' }, // 过期时间
+        }),
         // ... 其他模块
     ]
 })
 export class AppModule {}
 ```
-::: tip
+::: danger
+不要公开暴露这个密钥。我们在这里这样做是为了向您明确代码在做什么，但在生产环境中，您必须使用适当的措施来保护此密钥，
+例如秘钥库、环境变量或配置服务。
+:::
 默认情况下 jwt策略会全局开启，如果接口需要跳过jwt验证，请使用装饰器 `@SkipJwtAuth`
 ```ts
     @SkipJwtAuth()
     @Post('auth/register')
     async register(@Body() createUserDto: UserCreateDto) 
 ```
-:::
 
 ## 示例
 

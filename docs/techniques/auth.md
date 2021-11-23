@@ -4,35 +4,39 @@ Authentication is an essential part of most applications. There are many differe
 
 [JWT introduction](https://jwt.io/introduction/)
 
-## Authentication requirements
-
-- **Step 1**: Install an Auth authentication package provided by `Zerone`, including JWT Strategy and Local Strategy
+## Installation
+Install an Auth authentication package provided by `Zerone`, including JWT Strategy and Local Strategy.
 ```bash
 yarn add @zeronejs/auth
 ```
 
-- **Step 2**: Import the AuthModule into the root module
+## Start using
+Import the AuthModule into the root module.
 ::: tip
-Or import into the module where you depend on `AuthService`
+We configure the `AuthModule` using `forRoot()`, passing in a configuration object. [here](https://github.com/auth0/node-jsonwebtoken#usage) for more details on the available configuration options.
 :::
 ```ts
 import { AuthModule } from '@zeronejs/auth';
 @Module({
     imports: [
-        AuthModule,
+        AuthModule.forRoot({
+            secret: 'secretKey',
+            signOptions: { expiresIn: '6h' },
+        }),
         // ... Other modules
     ]
 })
 export class AppModule {}
 ```
-::: tip
+::: danger
+Do not expose this key publicly. We have done so here to make it clear what the code is doing, but in a production system you must protect this key using appropriate measures such as a secrets vault, environment variable, or configuration service.
+:::
 The JWT Strategy is enabled globally by default. If the interface needs to skip JWT validation, use the decorator `@SkipJwtAuth`
 ```ts
     @SkipJwtAuth()
     @Post('auth/register')
     async register(@Body() createUserDto: UserCreateDto) 
 ```
-:::
 
 ## The sample
 
