@@ -13,15 +13,15 @@ Execute `zerone --help` to get the following help information:
 Usage: zerone <command> [options]
 
 Options:
-  -v, --version   Output the current version.
-  -h, --help      Output usage information.
+  -v, --version         Output the current version.
+  -h, --help            Output usage information.
 
 Commands:
-  new|n [name]    Generate New Zerone application.
-  build           ts is packaged as js
-  info|i          Display Zerone project details.
-  generate|g      Generate a Zerone CRUD element
-  help [command]  display help for command
+  new|n [name]          Generate New Zerone application.
+  build [options]       ts代码打包为js
+  info|i                Display Zerone project details.
+  generate|g [options]  Generate a Zerone CRUD element
+  help [command]        display help for command
 ```
 ## info
 
@@ -65,8 +65,9 @@ Usage: zerone generate|g [options]
 Generate a Zerone CRUD element
 
 Options:
-  -d, --delete  Delete files generated before this module.
-  -h, --help    Output usage information.
+  -d, --delete       Delete files generated before this module.
+  -p, --path <path>  Specifies the path to the "entities" folder (relative to the command line).
+  -h, --help         Output usage information.
 ```
 
 ## build
@@ -84,6 +85,8 @@ Usage: zerone build [options]
 ts is packaged as js
 
 Options:
-  -h, --help  Output usage information.
+  -p, --path <path>  Specify the path of the folder where "tsconfig.json" is located.
+  -d, --delete       Delete files specified by "outDir".
+  -h, --help         Output usage information.
 ```
 
