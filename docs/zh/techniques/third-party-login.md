@@ -84,3 +84,85 @@ class UserController { // 你的控制器
     }
 ```
 
+### 微信小程序登录
+
+在你需要`微信小程序登录`的模块（module）提供`WechatLoginMiniProgramService`服务。
+
+```ts
+import { WechatLoginMiniProgramService } from '@zeronejs/wechat-login';
+
+@Module({
+    ...
+    providers: [..., WechatLoginMiniProgramService],
+})
+export class userModule {}
+```
+##### 登录时序 
+登录流程时序详见 [小程序登录](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
+##### 功能
+`WechatLoginMiniProgramService`提供多个方法，你只需传递参数，`Zerone`帮你对接微信。
+| 方法名         | 说明                                                                                                                                       |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| code2session   | [code换取session_key、openid、unionid](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html) |
+| getUserProfile | [完整用户信息的解密](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/signature.html)                               |
+| wxLogin        | jscode2session、getUserProfile 的合集                                                                                                      |
+
+##### 示例
+
+1. 小程序端调用 [wx.login()](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html) 获取 临时登录凭证code ，并回传到开发者服务器。
+
+2. 服务端通过`code` 换取session_key, openid和unionid
+
+```ts
+import { WechatLoginMiniProgramService } from '@zeronejs/wechat-login';
+...
+@Controller()
+class UserController { // 你的控制器
+    constructor(
+        // 注入服务
+        private readonly wechatLoginMiniProgramService: WechatLoginMiniProgramService,
+    ) {}
+    @Post('code2session') // 你的自定义路由
+    async code2session(@Body() body: any) {
+        const { code } = body;
+        const data = await this.wechatLoginMiniProgramService.code2session({
+            appId: 'wxbcf4c453d6exxxxx',
+            secret: 'xxxxxxxxxxxxxxxxxxxx',
+            code,
+        });
+        // ... 数据库、登录等等
+    }
+    
+```
+3. 小程序端调用 [wx.getUserProfile()](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html) 获取完整用户信息的加密数据`encryptedData`和加密算法的初始向量 `iv`。
+
+4. 服务端解密数据
+
+```ts
+    ...
+    @Post('getUserProfile') // 你的自定义路由
+    async getUserProfile(@Body() body: any) {
+        const { encryptedData, iv } = body;
+        const data = this.wechatLoginMiniProgramService.getUserProfile({
+            appId: 'wxbcf4c453d6exxxxx',
+            encryptedData,
+            iv,
+            session_key, // 由第二步获取
+        });
+        // ... 数据库、登录等等
+    }
+    
+```
+##### 一步完成？
+```ts
+    ...
+    const { code, encryptedData, iv } = body;
+    const user = await this.wechatLoginMiniProgramService.wxLogin({
+        appId: 'wxbcf4c453d6exxxxx',
+        secret: 'xxxxxxxxxxxxxxxxxxxx',
+        code,
+        encryptedData,
+        iv,
+    });
+    // ... 数据库、登录等等
+```
