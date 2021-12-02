@@ -10,10 +10,22 @@
 例如秘钥库、环境变量或配置服务。
 :::
 ## 微信
-安装Zerone 提供的微信登录服务包，其中包括 微信网页授权、微信小程序授权。
+安装`Zerone` 提供的微信登录服务包，其中包括 微信网页授权、微信小程序授权。
+<CodeGroup>
+  <CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add @zeronejs/wechat-login
 ```
+  </CodeGroupItem>
+  <CodeGroupItem title="NPM">
+
+```bash
+npm install @zeronejs/wechat-login
+```
+
+  </CodeGroupItem>
+</CodeGroup>
 
 ### 微信网页授权
 
@@ -125,7 +137,7 @@ class UserController { // 你的控制器
     @Post('code2session') // 你的自定义路由
     async code2session(@Body() body: any) {
         const { code } = body;
-        const data = await this.wechatLoginMiniProgramService.code2session({
+        const { session_key, openid, unionid } = await this.wechatLoginMiniProgramService.code2session({
             appId: 'wxbcf4c453d6exxxxx',
             secret: 'xxxxxxxxxxxxxxxxxxxx',
             code,
@@ -165,4 +177,39 @@ class UserController { // 你的控制器
         iv,
     });
     // ... 数据库、登录等等
+```
+### 服务器Token验证
+#### 安装
+
+<CodeGroup>
+  <CodeGroupItem title="YARN" active>
+
+```bash
+yarn add @zeronejs/utils
+```
+  </CodeGroupItem>
+  <CodeGroupItem title="NPM">
+
+```bash
+npm install @zeronejs/utils
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+```ts
+import { wechatVerifyServerToken } from "@zeronejs/utils";
+...
+    @Get('/wx') // 你填写的服务器路由
+    async wxServer(@Query() query: any) {
+        const { signature, timestamp, nonce, echostr } = query;
+        const token = '你填写的Token';
+        return wechatVerifyServerToken({
+            signature,
+            timestamp,
+            nonce,
+            echostr,
+            token
+        })
+    }
 ```
