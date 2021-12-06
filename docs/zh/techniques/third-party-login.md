@@ -178,6 +178,10 @@ class UserController { // 你的控制器
     });
     // ... 数据库、登录等等
 ```
+### 网站应用扫码登录
+
+[网站应用微信登录开发指南](https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html)
+
 ### 服务器Token验证
 #### 安装
 
@@ -213,3 +217,4 @@ import { wechatVerifyServerToken } from "@zeronejs/utils";
         })
     }
 ```
+
