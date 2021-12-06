@@ -218,3 +218,58 @@ import { wechatVerifyServerToken } from "@zeronejs/utils";
     }
 ```
 
+## 支付宝
+请先安装[支付宝sdk](./alipay-sdk.md)
+::: tip
+示例由[uni-app](https://uniapp.dcloud.io/README)构建。你也可以使用其他或原生，用它只是给你提供思路。
+:::
+### 支付宝小程序登录
+参考 [支付宝小程序获取会员基础信息](https://opendocs.alipay.com/mini/introduce/twn8vq)。
+#### 第一步：添加授权按钮
+```html
+<button open-type="getAuthorize" @getAuthorize="getUser" 
+    onGetAuthorize="getUser" onError="onAuthError" scope='userInfo'>
+	会员基础信息授权
+</button>
+```
+
+#### 第二步：授权登录和获取用户信息
+```js
+uni.login({
+    success: (loginRes) => {
+        // 获取用户信息
+        uni.getUserInfo({
+            provider: "alipay",
+            success: (infoRes) => {
+                const userInfo = JSON.parse(infoRes.response).response // 以下方的报文格式解析两层 response
+                // 数据发送至服务器端
+                uni.request({
+                    url: `http://example.com/somePost`,
+                    data: {
+                        code: loginRes.code,
+                        userInfo
+                    },
+                    method: "POST",
+                    success: (res) => {
+                        // 你的代码
+                    }
+                });
+            }
+        });
+    }
+});
+```
+#### 第三步：服务端获取userId
+```ts
+@Post('somePost')
+async demo(@Body() body: any) {
+    const alipay = this.alipayService.getInstance();
+    const result = await alipay.exec('alipay.system.oauth.token', {
+        grantType: 'authorization_code',
+        code: body.code,
+        // refreshToken: 'token'
+    });
+    console.log(result);
+    // ... 数据库、登录等等
+}
+```
