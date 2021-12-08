@@ -219,12 +219,15 @@ import { wechatVerifyServerToken } from "@zeronejs/utils";
 ```
 
 ## 支付宝
-请先安装[支付宝sdk](./alipay-sdk.md)
+本章将带您实现`小程序登录`、`PC网页内登录`
+### 支付宝小程序登录
+参考 [支付宝小程序获取会员基础信息](https://opendocs.alipay.com/mini/introduce/twn8vq)。
+
+#### 依赖
+- 支付宝sdk [@zeronejs/alipay-sdk](./alipay-sdk.md)
 ::: tip
 示例由[uni-app](https://uniapp.dcloud.io/README)构建。你也可以使用其他或原生，用它只是给你提供思路。
 :::
-### 支付宝小程序登录
-参考 [支付宝小程序获取会员基础信息](https://opendocs.alipay.com/mini/introduce/twn8vq)。
 #### 第一步：添加授权按钮
 ```html
 <button open-type="getAuthorize" @getAuthorize="getUser" 
@@ -272,4 +275,51 @@ async demo(@Body() body: any) {
     console.log(result);
     // ... 数据库、登录等等
 }
+```
+### PC网页内支付宝登录
+
+适用于移动应用、网页应用（PC 站点）等其他应用类型,参考 [PC 网页内获取用户信息](https://opendocs.alipay.com/open/284/web)。
+#### 依赖
+- 支付宝sdk [@zeronejs/alipay-sdk](./alipay-sdk.md)
+#### 第一步：URL拼接
+在你的`Controller`控制器内
+```ts
+    @Get('/pclogin') // 自定义路由
+    async pclogin(@Res() res: Response) {
+        const alipay = this.alipayService.getInstance();
+        const myURL = new URL('https://openauth.alipay.com/oauth2/publicAppAuthorize.htm');
+        myURL.searchParams.set('app_id', alipay.config.appId);
+        myURL.searchParams.set('scope', 'auth_user');
+        myURL.searchParams.set(
+            'redirect_uri',
+            encodeURI('https://www.example.com/pclogin/notify')// 请填写你的授权回调地址
+        );
+        const url = myURL.href;
+        return res.redirect(url);
+    }
+```
+
+#### 第二步：授权登录和获取用户信息
+```ts
+    @Get('/pclogin/notify') // 自定义的授权回调页面
+    async pcloginNotify(@Query() query: any) { // query携带auth_code、app_id、scope
+        const alipay = this.alipayService.getInstance();
+        // 第一步：换取 access_token 和 userId
+        const result = await alipay.exec('alipay.system.oauth.token', {
+            grantType: 'authorization_code',
+            code: query.auth_code,
+        });
+        const { accessToken, userId, msg, code } = result as any;
+        if (!accessToken || !msg) {
+            console.log(msg, code)
+            return result;
+        }
+        // 第二步：获取用户信息
+        const user = await alipay.exec('alipay.user.info.share', {
+            authToken: accessToken,
+            bizContent: {},
+        });
+        // ... 数据库、登录等等
+        console.log(user, userId);
+    }
 ```
