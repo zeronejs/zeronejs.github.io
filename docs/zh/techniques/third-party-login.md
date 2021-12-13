@@ -179,10 +179,11 @@ class UserController { // 你的控制器
     // ... 数据库、登录等等
 ```
 ### 网站应用扫码登录
-
+<!-- 需要接入微信开放平台 -->
 [网站应用微信登录开发指南](https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html)
 
 ### 服务器Token验证
+详见[微信公众号接入指南](https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html)
 #### 安装
 
 <CodeGroup>

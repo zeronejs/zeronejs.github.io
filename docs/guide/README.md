@@ -25,4 +25,7 @@ Open your browser and navigate to [http://localhost:5000/](http://localhost:5000
 
 ## OpenAPI 
 
-[http://localhost:5000/docs](http://localhost:5000/docs) 
+[http://localhost:5000/docs](http://localhost:5000/docs)
+## Backstage
+
+[http://localhost:5000/admin](http://localhost:5000/admin)

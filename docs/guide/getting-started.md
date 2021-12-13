@@ -90,3 +90,12 @@ View the generated interface on [http://localhost:5000/docs](http://localhost:50
 ::: tip
 This project is built on `TypeOrm`. For personalized requirements such as table association, please refer to [typeorm](https://typeorm.io/#/relations)
 :::
+
+## Backstage
+
+Open the [http://localhost:5000/admin](http://localhost:5000/admin)to view the backstage data.
+
+::: tip
+Click login directly.
+Configuration file in `src/common/admin/adminOption.ts`
+:::

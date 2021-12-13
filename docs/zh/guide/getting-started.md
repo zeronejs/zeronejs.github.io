@@ -89,3 +89,12 @@ npm run start
 ::: tip
 本项目构建于typeorm, 如有表关联等个性化需求，请参考[typeorm](https://typeorm.io/#/relations)
 :::
+
+## 数据后台
+
+打开[http://localhost:5000/admin](http://localhost:5000/admin)查看启动的数据后台。
+
+::: tip
+可直接点击登录。
+配置文件在 `src/common/admin/adminOption.ts`
+:::
