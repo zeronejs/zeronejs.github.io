@@ -310,7 +310,7 @@ async demo(@Body() body: any) {
             grantType: 'authorization_code',
             code: query.auth_code,
         });
-        const { accessToken, userId, msg, code } = result as any;
+        const { accessToken, userId, msg, code } = result;
         if (!accessToken || !msg) {
             console.log(msg, code)
             return result;
