@@ -21,13 +21,13 @@ sidebar: auto
 
 开发要求：
 
-- [Node.js](http://nodejs.org) **version 12+**
-- [Yarn v1 classic](https://classic.yarnpkg.com/en/docs/install)
+- [Node.js](http://nodejs.org) **version 16+**
+- [pnpm](https://pnpm.io/zh/)
 
 克隆代码仓库，并安装依赖：
 
 ```bash
-yarn
+pnpm i
 ```
 
 本项目开发使用的一些主要工具：
@@ -38,15 +38,15 @@ yarn
 
 ## 开发脚本
 
-### `yarn test`
+### `pnpm test`
 
 `test` 命令使用 Jest 来运行单元测试。
 
-### `yarn commit`
+### `pnpm commit`
 
 `commit` 命令使用 [git-cz](https://github.com/streamich/git-cz) ,在您进行代码提交时的`消息`。
 
-### `yarn build`
+### `pnpm build`
 
 `build` 命令使用 [zerone cli](https://zerone.top/zh/guide/cli.html) build命令 。
 

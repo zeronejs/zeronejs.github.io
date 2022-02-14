@@ -20,13 +20,13 @@ The `packages` directory houses multiple individual packages that are related to
 
 Pre-requirement：
 
-- [Node.js](http://nodejs.org) **version 12+**
-- [Yarn v1 classic](https://classic.yarnpkg.com/en/docs/install)
+- [Node.js](http://nodejs.org) **version 16+**
+- [pnpm](https://pnpm.io/)
 
 Clone the repo, and install dependencies：
 
 ```bash
-yarn
+pnpm i
 ```
 
 Main tools that used in this project：
@@ -37,15 +37,15 @@ Main tools that used in this project：
 
 ## Scripts
 
-### `yarn test`
+### `pnpm test`
 
 The `test` script uses Jest to run unit testings
 
-### `yarn commit`
+### `pnpm commit`
 
 The `commit` command uses the `message` from [git-cz](https://github.com/streamich/git-cz) when you commit code.
 
-### `yarn build`
+### `pnpm build`
 
 The `build` command uses [zerone cli](https://zerone.top/guide/cli.html) the build command.
 
