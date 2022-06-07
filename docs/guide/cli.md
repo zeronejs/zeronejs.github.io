@@ -90,3 +90,40 @@ Options:
   -h, --help         Output usage information.
 ```
 
+
+## api
+
+Read the documentation of swagger (v3) and generate the corresponding ts code
+::: tip
+This is helpful if you are a front-end developer.
+:::
+
+```bash
+Usage: zerone api [options]
+
+Generate Swagger Api
+
+Options:
+  -h, --help  Output usage information.
+```
+
+- **step 1**: You need to add a `swagger.config.json` configuration file where the api is generated
+
+- **step 2**: Add your swagger documentation address to the configuration file
+
+##### Example
+
+```ts
+{
+    "docsUrl": "http://www.example.com/v3/api-docs",
+    "includeTags": [],
+    "excludeTags": ["bot-callback-controller"]
+}
+```
+
+##### Parameter Description
+| parameter | illustrate |
+| ---- | ------------ |
+| docsUrl | json document address |
+| includeTags | tags to be included (unfilled or empty array means all included) |
+| excludeTags | tags to exclude |
