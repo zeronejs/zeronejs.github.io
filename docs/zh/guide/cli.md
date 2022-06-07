@@ -22,6 +22,7 @@ Commands:
   build [options]       ts代码打包为js
   info|i                Display Zerone project details.
   generate|g [options]  Generate a Zerone CRUD element
+  api                   Generate Swagger Api
   help [command]        display help for command
 ```
 
@@ -117,7 +118,12 @@ Options:
 
 - **步骤 2**: 在配置文件中添加你的 swagger 文档地址
 
-##### 示例
+- **步骤 3**: 运行命令
+```bash
+zerone api
+```
+
+##### 配置示例
 
 ```ts
 {
