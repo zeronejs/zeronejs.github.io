@@ -123,7 +123,8 @@ zerone api
 {
     "docsUrl": "http://www.example.com/v3/api-docs",
     "includeTags": [],
-    "excludeTags": ["bot-callback-controller"]
+    "excludeTags": ["bot-callback-controller"],
+    "prefix": ""
 }
 ```
 
@@ -133,3 +134,4 @@ zerone api
 | docsUrl | json document address |
 | includeTags | tags to be included (unfilled or empty array means all included) |
 | excludeTags | tags to exclude |
+| prefix | The prefix to be added to the interface |

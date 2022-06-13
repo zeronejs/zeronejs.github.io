@@ -129,7 +129,8 @@ zerone api
 {
     "docsUrl": "http://www.example.com/v3/api-docs",
     "includeTags": [],
-    "excludeTags": ["bot-callback-controller"]
+    "excludeTags": ["bot-callback-controller"],
+    "prefix": ""
 }
 ```
 
@@ -139,3 +140,4 @@ zerone api
 | docsUrl | json 文档地址 |
 | includeTags | 要包含的 tags（不填或空数组表示全部包含） |
 | excludeTags | 要排除的 tags |
+| prefix | 接口要添加的前缀 |
