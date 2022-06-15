@@ -135,3 +135,10 @@ zerone api
 | includeTags | tags to be included (unfilled or empty array means all included) |
 | excludeTags | tags to exclude |
 | prefix | The prefix to be added to the interface |
+
+`DeepRequired` Implementation Reference
+```ts
+export type DeepRequired<T> = T extends Record<string, any>
+    ? { [K in keyof T]-?: DeepRequired<T[K]> }
+    : Required<T>;
+```

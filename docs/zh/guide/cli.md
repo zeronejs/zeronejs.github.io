@@ -141,3 +141,10 @@ zerone api
 | includeTags | 要包含的 tags（不填或空数组表示全部包含） |
 | excludeTags | 要排除的 tags |
 | prefix | 接口要添加的前缀 |
+
+`DeepRequired` 实现参考
+```ts
+export type DeepRequired<T> = T extends Record<string, any>
+    ? { [K in keyof T]-?: DeepRequired<T[K]> }
+    : Required<T>;
+```
