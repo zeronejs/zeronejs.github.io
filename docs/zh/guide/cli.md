@@ -119,6 +119,7 @@ Options:
 - **步骤 2**: 在配置文件中添加你的 swagger 文档地址
 
 - **步骤 3**: 运行命令
+
 ```bash
 zerone api
 ```
@@ -135,16 +136,11 @@ zerone api
 ```
 
 ##### 参数说明
-| 参数 | 说明 |
-| ---- | ------------ |
-| docsUrl | json 文档地址 |
-| includeTags | 要包含的 tags（不填或空数组表示全部包含） |
-| excludeTags | 要排除的 tags |
-| prefix | 接口要添加的前缀 |
 
-`DeepRequired` 实现参考
-```ts
-export type DeepRequired<T> = T extends Record<string, any>
-    ? { [K in keyof T]-?: DeepRequired<T[K]> }
-    : Required<T>;
-```
+| 参数             | 说明                                      |
+| ---------------- | ----------------------------------------- |
+| docsUrl          | json 文档地址                             |
+| includeTags      | 要包含的 tags（不填或空数组表示全部包含） |
+| excludeTags      | 要排除的 tags                             |
+| prefix           | 接口要添加的前缀                          |
+| axiosInstanceUrl | axios 实例地址 （默认：@/utils/request）  |
