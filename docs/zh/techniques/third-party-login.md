@@ -184,26 +184,9 @@ class UserController { // 你的控制器
 
 ### 服务器Token验证
 详见[微信公众号接入指南](https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html)
-#### 安装
-
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
-
-```bash
-yarn add @zeronejs/utils
-```
-  </CodeGroupItem>
-  <CodeGroupItem title="NPM">
-
-```bash
-npm install @zeronejs/utils
-```
-
-  </CodeGroupItem>
-</CodeGroup>
 
 ```ts
-import { wechatVerifyServerToken } from "@zeronejs/utils";
+import { wechatVerifyServerToken } from "@zeronejs/wechat-login";
 ...
     @Get('/wx') // 你填写的服务器路由
     async wxServer(@Query() query: any) {
