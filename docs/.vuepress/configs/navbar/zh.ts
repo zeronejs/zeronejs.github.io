@@ -17,6 +17,7 @@ export const zh: NavbarConfig = [
           '/zh/techniques/third-party-login.md',
           '/zh/techniques/alipay-sdk.md',
           "/zh/techniques/redis.md",
+          '/zh/techniques/utils.md',
           // '/zh/techniques/crud.md',
           // '/zh/reference/frontmatter.md',
           // '/zh/reference/components.md',

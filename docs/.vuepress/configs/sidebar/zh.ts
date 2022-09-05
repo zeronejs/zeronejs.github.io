@@ -53,6 +53,7 @@ export const zh: SidebarConfig = {
         '/zh/techniques/third-party-login.md',
         '/zh/techniques/alipay-sdk.md',
         '/zh/techniques/redis.md',
+        '/zh/techniques/utils.md',
         // '/zh/techniques/crud.md',
         // '/zh/reference/cli.md',
         // '/zh/reference/config.md',
