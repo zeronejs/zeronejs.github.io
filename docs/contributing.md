@@ -14,7 +14,7 @@ The `packages` directory houses multiple individual packages that are related to
 
 - `@zeronejs/redis`: Redis module.
 
-- `@zeronejs/utils`: Utility function modules that can only be used on the Node side.
+- `@zeronejs/utils`: Tool function module.
 
 ## Development Setup
 

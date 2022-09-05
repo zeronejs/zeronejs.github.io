@@ -15,7 +15,7 @@ sidebar: auto
 
 - `@zeronejs/redis`: redis模块。
 
-- `@zeronejs/utils`: 仅可以在 Node 端使用的工具函数模块。
+- `@zeronejs/utils`: 工具函数模块。
 
 ## 开发配置
 
