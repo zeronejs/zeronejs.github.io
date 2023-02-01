@@ -36,6 +36,55 @@ Commands:
 zerone info
 ```
 
+## api
+
+读取 swagger(v3)的文档，生成前端相应的 ts/js 代码
+::: tip
+如果您是前端开发者，这将很有帮助。
+:::
+
+```bash
+Usage: zerone api [options]
+
+Generate Swagger Api
+
+Options:
+  -d, --delete       删除之前生成的代码.
+  -js, --javascript  生成js代码.
+  -p, --path <path>  指定 "swagger.config.json "文件夹的路径（相对于当前位置）
+  -h, --help         Output usage information.
+```
+
+- **步骤 1**: 你需要在生成 api 的位置添加一个 `swagger.config.json` 配置文件
+
+- **步骤 2**: 运行命令
+
+```bash
+zerone api
+```
+
+##### 配置示例
+
+```ts
+{
+    "docsUrl": "http://www.example.com/v3/api-docs",
+    "includeTags": [],
+    "excludeTags": ["bot-callback-controller"],
+    "axiosInstanceUrl": "@/utils/request",
+    "prefix": ""
+}
+```
+
+##### 参数说明
+
+| 参数             | 说明                                      |
+| ---------------- | ----------------------------------------- |
+| docsUrl          | json 文档地址                             |
+| includeTags      | 要包含的 tags（不填或空数组表示全部包含） |
+| excludeTags      | 要排除的 tags                             |
+| prefix           | 接口要添加的前缀                          |
+| axiosInstanceUrl | axios 实例地址 （默认：@/utils/request）  |
+
 ## new
 
 新建一个 Zerone 项目。
@@ -98,49 +147,3 @@ Options:
   -h, --help         Output usage information.
 ```
 
-## api
-
-读取 swagger(v3)的文档，生成相应的 ts 代码
-::: tip
-如果您是前端开发者，这将很有帮助。
-:::
-
-```bash
-Usage: zerone api [options]
-
-Generate Swagger Api
-
-Options:
-  -h, --help  Output usage information.
-```
-
-- **步骤 1**: 你需要在生成 api 的位置添加一个 `swagger.config.json` 配置文件
-
-- **步骤 2**: 在配置文件中添加你的 swagger 文档地址
-
-- **步骤 3**: 运行命令
-
-```bash
-zerone api
-```
-
-##### 配置示例
-
-```ts
-{
-    "docsUrl": "http://www.example.com/v3/api-docs",
-    "includeTags": [],
-    "excludeTags": ["bot-callback-controller"],
-    "prefix": ""
-}
-```
-
-##### 参数说明
-
-| 参数             | 说明                                      |
-| ---------------- | ----------------------------------------- |
-| docsUrl          | json 文档地址                             |
-| includeTags      | 要包含的 tags（不填或空数组表示全部包含） |
-| excludeTags      | 要排除的 tags                             |
-| prefix           | 接口要添加的前缀                          |
-| axiosInstanceUrl | axios 实例地址 （默认：@/utils/request）  |

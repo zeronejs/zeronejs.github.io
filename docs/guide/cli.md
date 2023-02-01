@@ -35,6 +35,58 @@ Use this command whenever you want to check your environment or submit an Issue.
 ```bash
 zerone info
 ```
+## api
+
+Read the documentation of swagger (v3) and generate the corresponding ts code
+::: tip
+This is helpful if you are a front-end developer.
+:::
+
+```bash
+Usage: zerone api [options]
+
+Generate Swagger Api
+
+Options:
+  -d, --delete       Delete files generated before this module.
+  -js, --javascript  Generate JavaScript code.
+  -p, --path <path>  Specifies the path to the "swagger.config.json" folder
+                     (relative to the command line).
+  -h, --help         Output usage information.
+```
+
+- **step 1**: You need to add a `swagger.config.json` configuration file where the api is generated
+
+- **step 2**: Add your swagger documentation address to the configuration file
+
+- **step 3**: run command
+
+```bash
+zerone api
+```
+
+##### Configuration example
+
+```ts
+{
+    "docsUrl": "http://www.example.com/v3/api-docs",
+    "includeTags": [],
+    "excludeTags": ["bot-callback-controller"],
+    "axiosInstanceUrl": "@/utils/request",
+    "prefix": ""
+}
+```
+
+##### Parameter Description
+
+| parameter        | illustrate                                                       |
+| ---------------- | ---------------------------------------------------------------- |
+| docsUrl          | json document address                                            |
+| includeTags      | tags to be included (unfilled or empty array means all included) |
+| excludeTags      | tags to exclude                                                  |
+| prefix           | The prefix to be added to the interface                          |
+| axiosInstanceUrl | axios instance address （default：@/utils/request）              |
+
 
 ## new
 
@@ -97,51 +149,4 @@ Options:
   -d, --delete       Delete files specified by "outDir".
   -h, --help         Output usage information.
 ```
-
-## api
-
-Read the documentation of swagger (v3) and generate the corresponding ts code
-::: tip
-This is helpful if you are a front-end developer.
-:::
-
-```bash
-Usage: zerone api [options]
-
-Generate Swagger Api
-
-Options:
-  -h, --help  Output usage information.
-```
-
-- **step 1**: You need to add a `swagger.config.json` configuration file where the api is generated
-
-- **step 2**: Add your swagger documentation address to the configuration file
-
-- **step 3**: run command
-
-```bash
-zerone api
-```
-
-##### Configuration example
-
-```ts
-{
-    "docsUrl": "http://www.example.com/v3/api-docs",
-    "includeTags": [],
-    "excludeTags": ["bot-callback-controller"],
-    "prefix": ""
-}
-```
-
-##### Parameter Description
-
-| parameter        | illustrate                                                       |
-| ---------------- | ---------------------------------------------------------------- |
-| docsUrl          | json document address                                            |
-| includeTags      | tags to be included (unfilled or empty array means all included) |
-| excludeTags      | tags to exclude                                                  |
-| prefix           | The prefix to be added to the interface                          |
-| axiosInstanceUrl | axios instance address （default：@/utils/request）              |
 

@@ -126,7 +126,8 @@ export default defineUserConfig<DefaultThemeOptions>({
         editLinkText: "在 GitHub 上编辑此页",
         docsRepo: "zeronejs/zeronejs.github.io",
         lastUpdatedText: "上次更新",
-        contributorsText: "贡献者",
+        contributors:false,
+        // contributorsText: "贡献者",
 
         // custom containers
         tip: "提示",
