@@ -25,16 +25,6 @@ Commands:
   api                   Generate Swagger Api
   help [command]        display help for command
 ```
-
-## info
-
-Output information about the current system and dependencies.
-
-Use this command whenever you want to check your environment or submit an Issue.
-
-```bash
-zerone info
-```
 ## api
 
 Read the documentation of swagger (v3) and generate the corresponding ts code
@@ -86,6 +76,16 @@ zerone api
 | excludeTags      | tags to exclude                                                  |
 | prefix           | The prefix to be added to the interface                          |
 | axiosInstanceUrl | axios instance address （default：@/utils/request）              |
+
+## info
+
+Output information about the current system and dependencies.
+
+Use this command whenever you want to check your environment or submit an Issue.
+
+```bash
+zerone info
+```
 
 
 ## new

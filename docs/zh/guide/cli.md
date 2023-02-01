@@ -25,17 +25,6 @@ Commands:
   api                   Generate Swagger Api
   help [command]        display help for command
 ```
-
-## info
-
-输出当前系统和依赖相关的信息。
-
-在你想要检查你的环境，或者提交 Issue 时候，可以使用该命令。
-
-```bash
-zerone info
-```
-
 ## api
 
 读取 swagger(v3)的文档，生成前端相应的 ts/js 代码
@@ -84,6 +73,17 @@ zerone api
 | excludeTags      | 要排除的 tags                             |
 | prefix           | 接口要添加的前缀                          |
 | axiosInstanceUrl | axios 实例地址 （默认：@/utils/request）  |
+
+## info
+
+输出当前系统和依赖相关的信息。
+
+在你想要检查你的环境，或者提交 Issue 时候，可以使用该命令。
+
+```bash
+zerone info
+```
+
 
 ## new
 
