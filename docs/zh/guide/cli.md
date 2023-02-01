@@ -45,6 +45,16 @@ Options:
 ```
 
 - **步骤 1**: 你需要在生成 api 的位置添加一个 `swagger.config.json` 配置文件
+> 配置示例
+> ```ts
+> {
+>     "docsUrl": "http://www.example.com/v3/api-docs",
+>     "includeTags": [],
+>     "excludeTags": ["bot-callback-controller"],
+>     "axiosInstanceUrl": "@/utils/request",
+>     "prefix": ""
+> }
+> ```
 
 - **步骤 2**: 运行命令
 
@@ -52,17 +62,6 @@ Options:
 zerone api
 ```
 
-##### 配置示例
-
-```ts
-{
-    "docsUrl": "http://www.example.com/v3/api-docs",
-    "includeTags": [],
-    "excludeTags": ["bot-callback-controller"],
-    "axiosInstanceUrl": "@/utils/request",
-    "prefix": ""
-}
-```
 
 ##### 参数说明
 
@@ -71,8 +70,8 @@ zerone api
 | docsUrl          | json 文档地址                             |
 | includeTags      | 要包含的 tags（不填或空数组表示全部包含） |
 | excludeTags      | 要排除的 tags                             |
-| prefix           | 接口要添加的前缀                          |
 | axiosInstanceUrl | axios 实例地址 （默认：@/utils/request）  |
+| prefix           | 接口要添加的前缀                          |
 
 ## info
 

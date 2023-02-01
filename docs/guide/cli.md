@@ -46,27 +46,21 @@ Options:
 ```
 
 - **step 1**: You need to add a `swagger.config.json` configuration file where the api is generated
-
-- **step 2**: Add your swagger documentation address to the configuration file
-
-- **step 3**: run command
+> Configuration example
+> ```ts
+> {
+>     "docsUrl": "http://www.example.com/v3/api-docs",
+>     "includeTags": [],
+>     "excludeTags": ["bot-callback-controller"],
+>     "axiosInstanceUrl": "@/utils/request",
+>     "prefix": ""
+> }
+> ```
+- **step 2**: run command
 
 ```bash
 zerone api
 ```
-
-##### Configuration example
-
-```ts
-{
-    "docsUrl": "http://www.example.com/v3/api-docs",
-    "includeTags": [],
-    "excludeTags": ["bot-callback-controller"],
-    "axiosInstanceUrl": "@/utils/request",
-    "prefix": ""
-}
-```
-
 ##### Parameter Description
 
 | parameter        | illustrate                                                       |
