@@ -1,5 +1,6 @@
 ---
 home: true
+footerHtml: true
 title: Home
 heroImage: /images/logo/logo3.gif
 actions:
@@ -22,7 +23,7 @@ features:
     details: Flexible plugin API that allow plugins to provide many plug-and-play modules for your services.
   - title: Convenient
     details: It takes a cup of tea to finish the job.
-footer: MIT Licensed | Copyright © 2021-present zeronejs
+footer: MIT Licensed | Copyright © 2021-present <a href="https://github.com/zeronejs/zerone">zeronejs</a>
 ---
 
 ### As Easy as 1, 2, 3

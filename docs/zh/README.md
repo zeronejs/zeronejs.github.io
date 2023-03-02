@@ -1,5 +1,6 @@
 ---
 home: true
+footerHtml: true
 title: 首页
 heroImage: /images/logo/logo3.gif
 actions:
@@ -22,9 +23,8 @@ features:
     details: 灵活的插件API，使得插件可以为你的服务提供许多即插即用的模块。
   - title: 便捷
     details: 一盏茶的功夫完成工作。
-footer: MIT Licensed | Copyright © 2021-present zeronejs
+footer: MIT Licensed | Copyright © 2021-present <a href="https://github.com/zeronejs/zerone">zeronejs</a>
 ---
-
 ### 像数 1, 2, 3 一样容易
 
 ```bash
