@@ -23,7 +23,7 @@ features:
     details: 灵活的插件API，使得插件可以为你的服务提供许多即插即用的模块。
   - title: 便捷
     details: 一盏茶的功夫完成工作。
-footer: MIT Licensed | Copyright © 2021-present <a href="https://github.com/zeronejs/zerone">zeronejs</a>
+footer: MIT Licensed | Copyright © 2021-present <a href="https://github.com/zeronejs/zerone">zeronejs</a><br /> <a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2023003679号</a>
 ---
 ### 像数 1, 2, 3 一样容易
 
