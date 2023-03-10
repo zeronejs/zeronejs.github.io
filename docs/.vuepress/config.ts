@@ -2,10 +2,13 @@ import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
 import { path } from "@vuepress/utils";
 import { navbar, sidebar } from "./configs";
-
+import { defaultTheme } from "@vuepress/theme-default";
+import { searchPlugin } from "@vuepress/plugin-search";
+import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
+import { shikiPlugin } from "@vuepress/plugin-shiki";
 const isProd = process.env.NODE_ENV === "production";
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig({
   base: "/",
 
   head: [
@@ -64,14 +67,12 @@ export default defineUserConfig<DefaultThemeOptions>({
     "/": {
       lang: "en-US",
       title: "Zerone",
-      description:
-        "zerone = zero => one, build the Node project from 0 to 1",
+      description: "zerone = zero => one, build the Node project from 0 to 1",
     },
     "/zh/": {
       lang: "zh-CN",
       title: "Zerone",
-      description:
-        `zerone = zero => one ，从0到1构建node项目`,
+      description: `zerone = zero => one ，从0到1构建node项目`,
     },
   },
 
@@ -81,7 +82,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   //   // use vite in dev, use webpack in prod
   //   (isProd ? '@vuepress/webpack' : '@vuepress/vite'),
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "/images/logo/logo.png",
 
     repo: "zeronejs/zerone",
@@ -126,7 +127,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         editLinkText: "在 GitHub 上编辑此页",
         docsRepo: "zeronejs/zeronejs.github.io",
         lastUpdatedText: "上次更新",
-        contributors:false,
+        contributors: false,
         // contributorsText: "贡献者",
 
         // custom containers
@@ -145,7 +146,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
         // a11y
         openInNewWindow: "在新窗口打开",
-        toggleDarkMode: "切换夜间模式",
+        toggleColorMode: "切换颜色模式",
         toggleSidebar: "切换侧边栏",
       },
     },
@@ -154,7 +155,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       // only enable git plugin in production mode
       git: isProd,
     },
-  },
+  }),
 
   markdown: {
     importCode: {
@@ -183,26 +184,23 @@ export default defineUserConfig<DefaultThemeOptions>({
     //       },
     //     },
     //   ],
-    [
-      "@vuepress/plugin-search",
-      {
-        locales: {
-          "/": {
-            placeholder: "Search",
-          },
-          "/zh/": {
-            placeholder: "搜索",
-          },
+    searchPlugin({
+      locales: {
+        "/": {
+          placeholder: "Search",
+        },
+        "/zh/": {
+          placeholder: "搜索",
         },
       },
-    ],
-    [
-      "@vuepress/plugin-google-analytics",
-      {
-        // we have multiple deployments, which would use different id
-        id: "UA-211860502-1",
-      },
-    ],
+    }),
+    googleAnalyticsPlugin({
+      id: "UA-211860502-1",
+    }),
+    shikiPlugin({
+      theme: "dark-plus",
+    }),
+
     //   [
     //     '@vuepress/plugin-register-components',
     //     {
@@ -210,13 +208,5 @@ export default defineUserConfig<DefaultThemeOptions>({
     //     },
     //   ],
     //   // only enable shiki plugin in production mode
-    [
-      "@vuepress/plugin-shiki",
-      isProd
-        ? {
-            theme: "dark-plus",
-          }
-        : false,
-    ],
   ],
 });
