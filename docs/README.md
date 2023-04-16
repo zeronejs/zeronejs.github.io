@@ -23,7 +23,10 @@ features:
     details: Flexible plugin API that allow plugins to provide many plug-and-play modules for your services.
   - title: Convenient
     details: It takes a cup of tea to finish the job.
-footer: MIT Licensed | Copyright © 2021-present <a href="https://github.com/zeronejs/zerone">zeronejs</a><br /> <a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2023003679号</a>
+footer: MIT Licensed | Copyright © 2021-present <a href="https://github.com/zeronejs/zerone">zeronejs</a><br /> <a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2023003679号</a> <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41010202003198"><img
+                src="/images/beian.png" />
+            <span>豫公网安备 41010202003198号</span>
+        </a>
 ---
 
 ### As Easy as 1, 2, 3
