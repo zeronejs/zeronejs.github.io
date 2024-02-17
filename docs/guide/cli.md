@@ -25,6 +25,7 @@ Commands:
   api                   Generate Swagger Api
   help [command]        display help for command
 ```
+
 ## api
 
 Read the documentation of swagger (v3) and generate the corresponding ts code
@@ -46,30 +47,34 @@ Options:
 ```
 
 - **step 1**: You need to add a `swagger.config.json` configuration file where the api is generated
-> Configuration example
-> ```ts
-> {
->     "docsUrl": "http://www.example.com/v3/api-docs",
->     "includeTags": [],
->     "excludeTags": ["bot-callback-controller"],
->     "axiosInstanceUrl": "@/utils/request",
->     "prefix": ""
-> }
-> ```
+  > Configuration example
+  >
+  > ```ts
+  > {
+  >     "docsUrl": "http://www.example.com/v3/api-docs",
+  >     "includeTags": [],
+  >     "excludeTags": ["bot-callback-controller"],
+  >     "axiosInstanceUrl": "@/utils/request",
+  >     "prefix": ""
+  >     "vueUseAxios": true
+  > }
+  > ```
 - **step 2**: run command
 
 ```bash
 zerone api
 ```
+
 ##### Parameter Description
 
-| parameter        | illustrate                                                       |
-| ---------------- | ---------------------------------------------------------------- |
-| docsUrl          | json document address                                            |
-| includeTags      | tags to be included (unfilled or empty array means all included) |
-| excludeTags      | tags to exclude                                                  |
-| prefix           | The prefix to be added to the interface                          |
-| axiosInstanceUrl | axios instance address （default：@/utils/request）              |
+| parameter        | illustrate                                                                    |
+| ---------------- | ----------------------------------------------------------------------------- |
+| docsUrl          | json document address                                                         |
+| includeTags      | tags to be included (unfilled or empty array means all included)              |
+| excludeTags      | tags to exclude                                                               |
+| prefix           | The prefix to be added to the interface                                       |
+| axiosInstanceUrl | axios instance address （default：@/utils/request）                           |
+| vueUseAxios      | Also generate [useAxios](https://vueuse.org/integrations/useAxios/) in vueuse |
 
 ## info
 
@@ -80,7 +85,6 @@ Use this command whenever you want to check your environment or submit an Issue.
 ```bash
 zerone info
 ```
-
 
 ## new
 
@@ -143,4 +147,3 @@ Options:
   -d, --delete       Delete files specified by "outDir".
   -h, --help         Output usage information.
 ```
-

@@ -25,6 +25,7 @@ Commands:
   api                   Generate Swagger Api
   help [command]        display help for command
 ```
+
 ## api
 
 读取 swagger(v3)的文档，生成前端相应的 ts/js 代码
@@ -45,16 +46,19 @@ Options:
 ```
 
 - **步骤 1**: 你需要在生成 api 的位置添加一个 `swagger.config.json` 配置文件
-> 配置示例
-> ```ts
-> {
->     "docsUrl": "http://www.example.com/v3/api-docs",
->     "includeTags": [],
->     "excludeTags": ["bot-callback-controller"],
->     "axiosInstanceUrl": "@/utils/request",
->     "prefix": ""
-> }
-> ```
+
+  > 配置示例
+  >
+  > ```ts
+  > {
+  >     "docsUrl": "http://www.example.com/v3/api-docs",
+  >     "includeTags": [],
+  >     "excludeTags": ["bot-callback-controller"],
+  >     "axiosInstanceUrl": "@/utils/request",
+  >     "prefix": ""
+  > "vueUseAxios": true,
+  > }
+  > ```
 
 - **步骤 2**: 运行命令
 
@@ -62,16 +66,16 @@ Options:
 zerone api
 ```
 
-
 ##### 参数说明
 
-| 参数             | 说明                                      |
-| ---------------- | ----------------------------------------- |
-| docsUrl          | json 文档地址                             |
-| includeTags      | 要包含的 tags（不填或空数组表示全部包含） |
-| excludeTags      | 要排除的 tags                             |
-| axiosInstanceUrl | axios 实例地址 （默认：@/utils/request）  |
-| prefix           | 接口要添加的前缀                          |
+| 参数             | 说明                                                                          |
+| ---------------- | ----------------------------------------------------------------------------- |
+| docsUrl          | json 文档地址                                                                 |
+| includeTags      | 要包含的 tags（不填或空数组表示全部包含）                                     |
+| excludeTags      | 要排除的 tags                                                                 |
+| axiosInstanceUrl | axios 实例地址 （默认：@/utils/request）                                      |
+| prefix           | 接口要添加的前缀                                                              |
+| vueUseAxios      | Also generate [useAxios](https://vueuse.org/integrations/useAxios/) in vueuse |
 
 ## info
 
@@ -82,7 +86,6 @@ zerone api
 ```bash
 zerone info
 ```
-
 
 ## new
 
@@ -145,4 +148,3 @@ Options:
   -d, --delete       Delete files specified by "outDir".
   -h, --help         Output usage information.
 ```
-
