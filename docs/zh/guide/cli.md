@@ -55,8 +55,8 @@ Options:
   >     "includeTags": [],
   >     "excludeTags": ["bot-callback-controller"],
   >     "axiosInstanceUrl": "@/utils/request",
-  >     "prefix": ""
-  > "vueUseAxios": true,
+  >     "prefix": "",
+  >     "vueUseAxios": "",
   > }
   > ```
 
